@@ -9,11 +9,16 @@ Pillow 4.1.0
 
 ## Install
 After insalling Python 3.6, download all the prerequiest by
-\tpip install -r requirments.txt
+'''
+pip install -r requirments.txt
+'
     
 ## Execute
 Depends on system environment you can either do
-\tpython ImageTiler256v2.py <image filename>
-
+'''
+python ImageTiler256v2.py <image filename>
+'''
 or locate the Python 3 excutable and do
-\tpython_path/python.exe  ImageTiler256v2.py <image filename>
+'''
+python_path/python.exe  ImageTiler256v2.py <image filename>
+'''
