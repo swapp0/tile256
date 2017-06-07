@@ -8,7 +8,7 @@ Divide a master images into equal size tiles
 * Pillow 4.1.0
 
 ## Install
-After insalling Python 3.6, download all the prerequiest by
+After insalling Python 3.6, download all the prerequisite by
 ```
 pip install -r requirments.txt
 ```
