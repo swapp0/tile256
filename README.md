@@ -7,7 +7,7 @@ This project was developed in Windows 10 with Python 3.6 using Spyder 3.1.4 prog
 ## Requirements
 
 * Python 2.7 or Python 3.6
-* Pillow 4.1
+* Pillow 4
 
 ## Install
 After insalling Python, install prerequisite by
@@ -15,9 +15,9 @@ After insalling Python, install prerequisite by
 pip install Pillow
 ```
 See [Pillow's documentation](http://pillow.readthedocs.io) for more information.
-If pip is not installed, pip can be installed with easy_install from python's setuptools package
+If pip is not installed, please download and run the get-pip.py script.
 ```
-sudo easy_install pip
+sudo python get-pip.py
 ```
     
     
@@ -28,5 +28,5 @@ python ImageTiler.py <image filename>
 ```
 or
 ```
-python_path/python.exe  ImageTiler.py <image filename>
+python_path/python.exe ImageTiler.py <image filename>
 ```
