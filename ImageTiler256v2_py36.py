@@ -50,8 +50,7 @@ def makeTiles(sourceImage, tileSize, rowTiles, colTiles, levelDir):
             cropImage = sourceImage.crop((left, upper, right, lower))
             print("%2d %2d %4d %4d %4d %4d - %4d %4d" % 
                   (x, y, left, upper, right, lower, cropImage.width, cropImage.height))
-            cropImage.save(
-                    levelDir+"\\%d_%d.jpg" % (left, upper))
+            cropImage.save(os.path.join(levelDir, "%d_%d.jpg" % (left, upper)))
                     # levelDir+"\\%d_%d_%d.jpg" % (tileNumber, left, upper)) # for testing purpose
             
             # tileNumber = tileNumber + 1  # for testing purpose
@@ -88,7 +87,7 @@ if __name__ == "__main__":
     try:
         # sourceImage = Image.open(sys.argv[1])
         sourceImage = Image.open("cat.jpg") # for testing purpose
-        levelDir = os.path.dirname(os.path.realpath("cat.jpg")) + "\\L"
+        levelDir = os.path.join(os.path.dirname(os.path.realpath("cat.jpg")), "L")
         showImageInfo(sourceImage)
         folderReset(levelDir)
         n, m, L = calcLevel(sourceImage)
