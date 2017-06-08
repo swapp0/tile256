@@ -17,7 +17,7 @@ pip install Pillow
 See [Pillow's documentation](http://pillow.readthedocs.io/en/3.1.x/installation.html "Installation — Pillow (PIL Fork) 3.1.2 documentation") for more information.
     
 ## Execute
-Depends on system environment you can either do, 
+Depends on system environment, open a commandline window and enter
 ```
 python ImageTiler.py <image filename>
 ```
