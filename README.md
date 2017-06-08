@@ -1,25 +1,26 @@
 # tile256
 
 ## About
-Divide a master images into equal size tiles. This program is optimized to run on Python 2.7 and Python 3.6
+Divide a master images into equal size tiles. This program is optimized to run on Python 2.7 and Python 3.6. 
+Code Develop in Windows 10 with Python 3.6 using Spyder 3.1.4 deveopment environment.
 
 ## Requirements
 
-* Python 2.7 or Python 3.6.1
-* PIL Pillow 4.1.0
+* Python 2.7 or Python 3.6
+* Pillow 4.1
 
 ## Install
-After insalling Python 3.6, download all the prerequisite by
+After insalling Python, install prerequisite by
 ```
-pip install -r requirments.txt
+pip install Pillow
 ```
     
 ## Execute
-Depends on system environment you can either do
+Depends on system environment you can either do, 
 ```
-python ImageTiler256v2.py <image filename>
+python ImageTiler.py <image filename>
 ```
-or locate the Python 3 excutable and do
+or
 ```
-python_path/python.exe  ImageTiler256v2.py <image filename>
+python_path/python.exe  ImageTiler.py <image filename>
 ```

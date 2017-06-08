@@ -6,6 +6,7 @@
 import os
 import sys
 import shutil
+import time
 from math import log, ceil
 from PIL import Image
 
@@ -30,8 +31,10 @@ def showImageInfo(sourceImage):
     print("Source Image Info")
     try:
         print(" Filename: ", sourceImage.filename)
+
     except AttributeError:
         print(" Filename: -- ")
+
     print(" Format: ", sourceImage.format)
     print(" Size: ", sourceImage.size)
     print(" Mode: ", sourceImage.mode)
@@ -53,7 +56,7 @@ def halfResolution(sourceImage):
     print("Image Resolution halfed...")
 
     showImageInfo(reducedImage)
-    
+
     return reducedImage
 
 
@@ -106,6 +109,8 @@ if __name__ == "__main__":
 
     sourceImage = None
 
+    startTime = time.time()
+    endTime = 0
     try:
         sourceImage = Image.open(sys.argv[1])
         # sourceImage = Image.open("cat.jpg")  # for testing purpose
@@ -121,9 +126,9 @@ if __name__ == "__main__":
                       TILE_SIZE,
                       int(ceil(float(sourceImage.size[0])/TILE_SIZE)),
                       int(ceil(float(sourceImage.size[1])/TILE_SIZE)),
-                      os.path.join(sourceDir, str(level)))
+                      os.path.join(sourceDir, str(L-level-1)))
 
-            print("Level %d tiles completed\n" % level)
+            print("Level %d tiles completed\n" % (L-level-1))
 
             if level < L-1:
                 sourceImage = halfResolution(sourceImage)
@@ -131,4 +136,8 @@ if __name__ == "__main__":
     except Exception:
         print("There is no such file")
 
-    print("END PROGRAM")
+    endTime = time.time()
+
+    print("Total time elapsed: %5.3f" % (endTime - startTime))
+
+    print("\nEND PROGRAM")
