@@ -96,7 +96,21 @@ def makeTiles(sourceImage, tileSize, rowTiles, colTiles, levelDir):
             lower = sourceImage.size[1]
         else:
             lower = lower + tileSize
-    return
+
+
+def createImagesAndTiles(levelRange, sourceImage, tileSize):
+    for level in range(levelRange):
+        makeTiles(sourceImage,
+                  TILE_SIZE,
+                  int(ceil(float(sourceImage.size[0])/tileSize)),
+                  int(ceil(float(sourceImage.size[1])/tileSize)),
+                  os.path.join(sourceDir, str(L-level-1)))
+
+        print("Level %d tiles completed\n" % (L-level-1))
+
+        if level < L-1:
+            sourceImage = halfResolution(sourceImage)
+
 
 # Execution
 if __name__ == "__main__":
@@ -121,20 +135,11 @@ if __name__ == "__main__":
 
         folderReset(sourceDir, L)
         showImageInfo(sourceImage)
-        for level in range(L):
-            makeTiles(sourceImage,
-                      TILE_SIZE,
-                      int(ceil(float(sourceImage.size[0])/TILE_SIZE)),
-                      int(ceil(float(sourceImage.size[1])/TILE_SIZE)),
-                      os.path.join(sourceDir, str(L-level-1)))
-
-            print("Level %d tiles completed\n" % (L-level-1))
-
-            if level < L-1:
-                sourceImage = halfResolution(sourceImage)
+        createImagesAndTiles(L, sourceImage, TILE_SIZE)
 
     except Exception:
         print("There is no such file")
+        # raise  # For testing purpose
 
     endTime = time.time()
 
