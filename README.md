@@ -14,7 +14,7 @@ After insalling Python, install prerequisite by
 ```
 pip install Pillow
 ```
-See [Pillow's documentation](http://pillow.readthedocs.io/en/3.1.x/installation.html) for more information.
+See [Pillow's documentation](http://pillow.readthedocs.io) for more information.
 If pip is not installed, pip can be installed with easy_install from python's setuptools package
 ```
 sudo easy_install pip
