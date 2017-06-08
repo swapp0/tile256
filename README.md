@@ -1,11 +1,12 @@
 # tile256
 
 ## About
-Divide a master images into equal size tiles
+Divide a master images into equal size tiles. This program is optimized to run on Python 2.7 and Python 3.6
 
 ## Requirements
-* Python 3.6.1
-* Pillow 4.1.0
+
+* Python 2.7 or Python 3.6.1
+* PIL Pillow 4.1.0
 
 ## Install
 After insalling Python 3.6, download all the prerequisite by
